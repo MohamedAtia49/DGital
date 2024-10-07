@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+// use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 /*
 |--------------------------------------------------------------------------
@@ -91,3 +92,39 @@ Route::prefix('/admin/')->name('admin.')->group(function(){
         Route::view('members','admin.members.index')->name('members');
     });
 });
+
+
+// Route::prefix('/admin/')->name('admin.')->group(function(){
+//     Route::view('login','admin.auth.login')->middleware('guest:admin')->name('login');
+//     ################################## Admin Routes ##################################
+//     Route::group([
+//         'prefix' => LaravelLocalization::setLocale(),
+//         'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ],
+//     ],
+//     function(){
+//         Route::middleware('admin')->group(function () {
+//             ###################### Index Page ############################
+//             Route::view('','admin.index')->name('index');
+//             ###################### Settings Page #########################
+//             Route::view('settings','admin.settings.index')->name('settings');
+//             ###################### Skills Page ###########################
+//             Route::view('skills','admin.skills.index')->name('skills');
+//             ###################### Subscribers Page ######################
+//             Route::view('subscribers','admin.subscribers.index')->name('subscribers');
+//             ###################### Counters Page #########################
+//             Route::view('counters','admin.counters.index')->name('counters');
+//             ###################### Services Page #########################
+//             Route::view('services','admin.services.index')->name('services');
+//             ###################### Messages Page #########################
+//             Route::view('messages','admin.messages.index')->name('messages');
+//             ###################### Categories Page #########################
+//             Route::view('categories','admin.categories.index')->name('categories');
+//             ###################### Projects Page #########################
+//             Route::view('projects','admin.projects.index')->name('projects');
+//             ###################### Testimonial Page #########################
+//             Route::view('testimonials','admin.testimonials.index')->name('testimonials');
+//             ###################### Members Page #########################
+//             Route::view('members','admin.members.index')->name('members');
+//         });
+//     });
+// });

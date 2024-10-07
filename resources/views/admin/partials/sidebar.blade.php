@@ -73,77 +73,77 @@
       <li class="menu-item @yield('index-active')">
         <a href="{{ route('admin.index') }}" class="menu-link">
           <i class="menu-icon tf-icons bx bx-home-circle"></i>
-          <div data-i18n="Analytics">Home</div>
+          <div data-i18n="Analytics">{{ __('sidebar.home') }}</div>
         </a>
       </li>
 
       <li class="menu-item @yield('settings-active')">
         <a href="{{ route('admin.settings') }}" class="menu-link">
           <i class="menu-icon tf-icons bx bx-cog"></i>
-          <div data-i18n="Analytics">Settings</div>
+          <div data-i18n="Analytics">{{ __('sidebar.settings') }}</div>
         </a>
       </li>
 
       <li class="menu-item @yield('skills-active')">
         <a href="{{ route('admin.skills') }}" class="menu-link">
           <i class="menu-icon tf-icons bx bx-detail"></i>
-          <div data-i18n="Analytics">Skills</div>
+          <div data-i18n="Analytics">{{ __('sidebar.skills') }}</div>
         </a>
       </li>
 
       <li class="menu-item @yield('subscribers-active')">
         <a href="{{ route('admin.subscribers') }}" class="menu-link">
           <i class='menu-icon tf-icons bx bx-envelope'></i>
-          <div data-i18n="Analytics">Subscribers</div>
+          <div data-i18n="Analytics">{{ __('sidebar.subscribers') }}</div>
         </a>
       </li>
 
       <li class="menu-item @yield('counters-active')">
         <a href="{{ route('admin.counters') }}" class="menu-link">
           <i class='menu-icon tf-icons bx bx-detail'></i>
-          <div data-i18n="Analytics">Counters</div>
+          <div data-i18n="Analytics">{{ __('sidebar.counters') }}</div>
         </a>
       </li>
 
       <li class="menu-item @yield('services-active')">
         <a href="{{ route('admin.services') }}" class="menu-link">
           <i class='menu-icon tf-icons bx bx-detail'></i>
-          <div data-i18n="Analytics">Services</div>
+          <div data-i18n="Analytics">{{ __('sidebar.services') }}</div>
         </a>
       </li>
 
       <li class="menu-item @yield('messages-active')">
         <a href="{{ route('admin.messages') }}" class="menu-link">
           <i class='menu-icon tf-icons bx bx-detail'></i>
-          <div data-i18n="Analytics">Messages</div>
+          <div data-i18n="Analytics">{{ __('sidebar.messages') }}</div>
         </a>
       </li>
 
       <li class="menu-item @yield('categories-active')">
         <a href="{{ route('admin.categories') }}" class="menu-link">
           <i class='menu-icon tf-icons bx bx-detail'></i>
-          <div data-i18n="Analytics">Categories</div>
+          <div data-i18n="Analytics">{{ __('sidebar.categories') }}</div>
         </a>
       </li>
 
       <li class="menu-item @yield('projects-active')">
         <a href="{{ route('admin.projects') }}" class="menu-link">
           <i class='menu-icon tf-icons bx bx-detail'></i>
-          <div data-i18n="Analytics">Projects</div>
+          <div data-i18n="Analytics">{{ __('sidebar.projects') }}</div>
         </a>
       </li>
 
       <li class="menu-item @yield('testimonials-active')">
         <a href="{{ route('admin.testimonials') }}" class="menu-link">
           <i class='menu-icon tf-icons bx bx-detail'></i>
-          <div data-i18n="Analytics">Testimonials</div>
+          <div data-i18n="Analytics">{{ __('sidebar.testimonials') }}</div>
         </a>
       </li>
 
       <li class="menu-item @yield('members-active')">
         <a href="{{ route('admin.members') }}" class="menu-link">
           <i class='menu-icon tf-icons bx bx-detail'></i>
-          <div data-i18n="Analytics">Members</div>
+          <div data-i18n="Analytics">{{ __('sidebar.members') }}</div>
         </a>
       </li>
 
