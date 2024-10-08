@@ -19,7 +19,7 @@ class CategoriesCreate extends Component
         $this->reset('name');
         $this->dispatch('createModalToggle');
         $this->dispatch('refreshData')->to(CategoriesData::class);
-        session()->flash('created_message','Data Updated Successfully');
+        session()->flash('created_message','Data Created Successfully');
     }
     public function render()
     {
