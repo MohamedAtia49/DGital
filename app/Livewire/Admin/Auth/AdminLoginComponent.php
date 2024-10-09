@@ -34,7 +34,7 @@ class AdminLoginComponent extends Component
                 'email' => trans('auth.failed'),
             ]);
         }
-        return to_route('admin.index');
+        return redirect('/admin');
     }
 
     public function render()

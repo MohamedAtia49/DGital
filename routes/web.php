@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
@@ -64,48 +65,19 @@ Route::prefix('/')->name('front.')->group(function(){
 /**
  * Admin Routes
  */
-
-// Route::prefix('/admin/')->name('admin.')->group(function(){
-//     Route::view('login','admin.auth.login')->middleware('guest:admin')->name('login');
-//     ################################## Admin Routes ##################################
-//     Route::middleware('admin')->group(function () {
-//         ###################### Index Page ############################
-//         Route::view('','admin.index')->name('index');
-//         ###################### Settings Page #########################
-//         Route::view('settings','admin.settings.index')->name('settings');
-//         ###################### Skills Page ###########################
-//         Route::view('skills','admin.skills.index')->name('skills');
-//         ###################### Subscribers Page ######################
-//         Route::view('subscribers','admin.subscribers.index')->name('subscribers');
-//         ###################### Counters Page #########################
-//         Route::view('counters','admin.counters.index')->name('counters');
-//         ###################### Services Page #########################
-//         Route::view('services','admin.services.index')->name('services');
-//         ###################### Messages Page #########################
-//         Route::view('messages','admin.messages.index')->name('messages');
-//         ###################### Categories Page #########################
-//         Route::view('categories','admin.categories.index')->name('categories');
-//         ###################### Projects Page #########################
-//         Route::view('projects','admin.projects.index')->name('projects');
-//         ###################### Testimonial Page #########################
-//         Route::view('testimonials','admin.testimonials.index')->name('testimonials');
-//         ###################### Members Page #########################
-//         Route::view('members','admin.members.index')->name('members');
-//     });
-// });
-
-
+############################### Multi Languages ###############################
 Route::group([
     'prefix' => LaravelLocalization::setLocale(),
     ],
     function(){
-    Route::view('login','admin.auth.login')->middleware('guest:admin')->name('login');
-    ################################## Admin Routes ##################################
+    Route::view('/admin/login','admin.auth.login')->middleware('guest:admin')->name('admin.login');
+    Route::get('/admin/logout',[AuthController::class,'logout'])->name('admin.logout');
     Route::group([
         'prefix' => '/admin/',
-        // 'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ],
+        'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath'],
     ],
     function(){
+            ################################## Admin Routes ##################################
         Route::middleware('admin')->name('admin.')->group(function () {
             ###################### Index Page ############################
             Route::view('','admin.index')->name('index');

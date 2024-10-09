@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Livewire\Admin\Auth;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Livewire\Component;
 
-class AdminLogoutComponent extends Component
+class AuthController extends Controller
 {
     public function logout()
     {
@@ -13,9 +14,5 @@ class AdminLogoutComponent extends Component
         session()->forget('guard.admin');
         session()->regenerateToken();
         return redirect('/admin/login');
-    }
-    public function render()
-    {
-        return view('admin.auth.admin-logout-component');
     }
 }

@@ -10,10 +10,26 @@ id="layout-navbar"
   </a>
 </div>
 
-<div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
+<div class="navbar-nav-right d-flex align-items-center pb-4 pt-3" id="navbar-collapse">
+    <!-- Localization Langauge -->
+    <div class="dropdown mt-2">
+        <button class="btn btn-primary dropdown-toggle" type="button" id="localeDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+            {{ LaravelLocalization::getCurrentLocaleNative() }} <!-- Display current locale -->
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="localeDropdown">
+            @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                <li>
+                    <a class="dropdown-item" rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                        {{ $properties['native'] }}
+                    </a>
+                </li>
+            @endforeach
+        </ul>
+    </div>
+    <!-- End Localization Langauge -->
   <ul class="navbar-nav flex-row align-items-center ms-auto">
     <!-- User -->
-    <li class="nav-item navbar-dropdown dropdown-user dropdown">
+    <li class="nav-item navbar-dropdown dropdown-user dropdown mt-2">
       <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
         <div class="avatar avatar-online">
           <img src="{{ asset('admin-assets') }}/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
