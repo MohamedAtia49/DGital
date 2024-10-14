@@ -74,7 +74,7 @@ Route::group([
     Route::get('/admin/logout',[AuthController::class,'logout'])->name('admin.logout');
     Route::group([
         'prefix' => '/admin/',
-        'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath'],
+        // 'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath'],
     ],
     function(){
             ################################## Admin Routes ##################################

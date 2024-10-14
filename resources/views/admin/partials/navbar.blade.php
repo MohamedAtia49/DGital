@@ -12,6 +12,7 @@ id="layout-navbar"
 
 <div class="navbar-nav-right d-flex align-items-center pb-4 pt-3" id="navbar-collapse">
     <!-- Localization Langauge -->
+    <h6 class="card-title text-primary mt-4">Langauges : </h6>
     <div class="dropdown mt-2">
         <button class="btn btn-primary dropdown-toggle" type="button" id="localeDropdown" data-bs-toggle="dropdown" aria-expanded="false">
             {{ LaravelLocalization::getCurrentLocaleNative() }} <!-- Display current locale -->
@@ -27,6 +28,15 @@ id="layout-navbar"
         </ul>
     </div>
     <!-- End Localization Langauge -->
+
+
+    <ul class="navbar-nav flex-row align-items-center">
+        <!-- Notification -->
+        @livewire('admin.notifications.category-notification')
+         <!-- End Notification -->
+      </ul>
+
+
   <ul class="navbar-nav flex-row align-items-center ms-auto">
     <!-- User -->
     <li class="nav-item navbar-dropdown dropdown-user dropdown mt-2">
@@ -60,6 +70,6 @@ id="layout-navbar"
     <!--/ User -->
   </ul>
 </div>
-</nav>
 
+</nav>
 <!-- / Navbar -->
